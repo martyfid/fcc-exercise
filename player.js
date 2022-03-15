@@ -10,18 +10,25 @@ export class Player {
 
     rollHand() {
         let score = null;
+
+
+
         this.#arrayDice.forEach(die => {
             let result = die.roll();
-            if (result == 3) { 
+            if (result == 3) {
                 score = 0;
                 this.#arrayDice.pop(); //Remove any dice from array that rolled a 3. Should remember to delete this Dice to avoid memory leaks
+                // console.log('-- 3 removed');
+
             }
             else if (score > result) score = result;
             else score = result;
         }
         );
 
-        if (score > 0) this.#arrayDice.pop(); //Pop lowest die. Should remember to delete this Dice to avoid memory leaks
+        if (score > 0) {
+            this.#arrayDice.pop();
+        }   //Pop lowest die. Should remember to delete this Dice to avoid memory leaks
         console.log(`- dice roll ${score}`);
 
         return score;

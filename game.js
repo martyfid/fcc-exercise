@@ -9,14 +9,14 @@ export class Game{
     constructor() {}
 
     play() {
-        
+
         let total = 0;
 
-        while(this.player1.handSize) total += this.player1.rollHand();
+        while(this.player1.handSize > 0) total += this.player1.rollHand();
 
         this.player1.reset();
 
-        console.log(total);
+        // console.log(total);
 
         return total;
     }
@@ -24,6 +24,6 @@ export class Game{
 
 }
 
-let blah = new Game();
+// let blah = new Game();
 
-blah.play();
+// blah.play();
